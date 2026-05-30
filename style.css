@@ -1,0 +1,489 @@
+/* ==========================================================================
+    1. ТАҒЙИРЁБАНДАҲО ВА НАЗАРДОШТҲОИ УМУМӢ
+========================================================================== */
+:root {
+    --bg-color: #08040d;
+    /* Ранги боз ҳам ториктар барои мувофиқат ба логотип */
+    --card-bg: rgba(20, 15, 30, 0.7);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --text-primary: #ffffff;
+    --text-secondary: #a8a0b5;
+
+    /* Рангҳои дурахшони мувофиқ ба акси J-SHOH (Бунафш ва Неон) */
+    --glow-purple: #b000ff;
+    --glow-cyan: #00e5ff;
+    --glow-yellow: #ffb700;
+
+    /* Шабакаҳо */
+    --whatsapp-green: #25d366;
+    --tiktok-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-color);
+    /* Заминаи туманӣ ва ноонии бунафш ва кабуд мувофиқи логотип */
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(176, 0, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(0, 229, 255, 0.12) 0%, transparent 50%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px 10px;
+}
+
+/* Контейнери телефон (Mobile Container) */
+.phone-frame {
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    position: relative;
+}
+
+/* ==========================================================================
+     2. ҚИСМИ БОЛОӢ (HEADER & LOGO)
+========================================================================== */
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px 2px;
+}
+
+.logo-text {
+    font-family: 'Teko', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-primary);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.btn-top-service {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(176, 0, 255, 0.3);
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-top-service i {
+    color: var(--glow-purple);
+}
+
+.btn-top-service:active {
+    transform: scale(0.95);
+    background: rgba(176, 0, 255, 0.15);
+}
+
+/* ==========================================================================
+     3. ПРОФИЛИ АВАТАР ВА ОМОР (AVATAR & INFO)
+========================================================================== */
+.profile-container {
+    text-align: center;
+    margin: 10px 0 5px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Давраи дурахшони аватари нави муштарӣ */
+.avatar-glow-wrapper {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, var(--glow-purple) 0%, var(--glow-cyan) 100%);
+    box-shadow: 0 0 30px rgba(176, 0, 255, 0.5);
+    margin-bottom: 16px;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--bg-color);
+}
+
+.profile-title {
+    font-family: 'Teko', sans-serif;
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+    text-shadow: 0 0 15px rgba(176, 0, 255, 0.6);
+}
+
+.profile-subtitle {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--glow-cyan);
+    letter-spacing: 2.5px;
+    margin-bottom: 12px;
+}
+
+/* Матни ороишии хурди байни ду хат */
+.divider-line {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.line {
+    height: 1px;
+    flex-grow: 1;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.15), transparent);
+}
+
+.divider-icon {
+    font-size: 8px;
+    color: var(--glow-cyan);
+    transform: rotate(45deg);
+}
+
+.profile-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.profile-desc span {
+    color: var(--glow-cyan);
+    font-weight: bold;
+}
+
+/* ==========================================================================
+    4. ТУГМАҲОИ ШАБАКАҲОИ ИҶТИМОӢ (SOCIAL LINKS)
+========================================================================== */
+.social-links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.social-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 16px;
+    border-radius: 18px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-card-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.icon-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background: rgba(255, 255, 255, 0.04);
+    transition: all 0.2s ease;
+}
+
+.social-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-name {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.social-value {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.social-arrow {
+    font-size: 14px;
+    opacity: 0.6;
+    transition: transform 0.2s ease;
+}
+
+/* Рангҳои инфиродии шабакаҳо */
+.wp-card:active .icon-circle {
+    background-color: rgba(37, 211, 102, 0.15);
+    color: var(--whatsapp-green);
+}
+
+.wp-card .social-arrow {
+    color: var(--whatsapp-green);
+}
+
+/* ТикТок рангу услуби махсус */
+.tk-card:active .icon-circle {
+    background: linear-gradient(135deg, rgba(37, 244, 238, 0.2), rgba(254, 44, 85, 0.2));
+    color: #fff;
+}
+
+.tk-card .social-arrow {
+    color: #fe2c55;
+}
+
+.tk-icon {
+    filter: drop-shadow(2px 0px 0px #fe2c55) drop-shadow(-2px 0px 0px #25f4ee);
+}
+
+.social-card:active {
+    transform: scale(0.98);
+    border-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(30, 20, 45, 0.9);
+}
+
+/* ==========================================================================
+    5. ТУГМАИ АСОСИИ СУПОРИШИ ДОНАТ (CTA GOLD BUTTON)
+========================================================================== */
+.cta-gold-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #ffc300 0%, #ff9100 100%);
+    border: none;
+    border-radius: 18px;
+    padding: 3px 3px 3px 20px;
+    color: #000000;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(255, 145, 0, 0.3);
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+.cta-left-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.cta-cart-icon {
+    font-size: 24px;
+    color: #000000;
+}
+
+.cta-text-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.cta-title {
+    font-family: 'Teko', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+    color: #000000;
+}
+
+.cta-sub {
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.6);
+    letter-spacing: 0.3px;
+}
+
+.cta-arrow-badge {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 58px;
+    height: 58px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #000000;
+    transition: transform 0.2s ease;
+}
+
+.cta-gold-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 10px rgba(255, 145, 0, 0.2);
+}
+
+.cta-gold-btn:hover .cta-arrow-badge {
+    transform: translateX(3px);
+}
+
+/* ==========================================================================
+    6. БАХШИ "ЧАРО МАҲЗ МО?" (FEATURES SECTION)
+========================================================================== */
+.why-me-section {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.accent-line {
+    height: 2px;
+    width: 30px;
+    background: linear-gradient(90deg, transparent, var(--glow-purple));
+}
+
+.accent-line.right {
+    background: linear-gradient(90deg, var(--glow-purple), transparent);
+}
+
+.section-header-text {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-secondary);
+}
+
+.features-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 100%;
+}
+
+.feature-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 15px 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.feature-icon-box {
+    font-size: 20px;
+    color: var(--glow-purple);
+    margin-bottom: 2px;
+}
+
+/* Рангҳои инфиродии нишонҳои хурди каҷ */
+.safe-icon {
+    color: var(--glow-cyan);
+}
+
+.fast-icon {
+    color: var(--glow-yellow);
+}
+
+.reliable-icon {
+    color: var(--glow-purple);
+}
+
+.feature-name {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
+}
+
+.feature-desc {
+    font-size: 9px;
+    color: var(--text-secondary);
+    line-height: 1.3;
+}
+
+/* ==========================================================================
+    7. ПОЁНИ САҲИФА (FOOTER)
+========================================================================== */
+.footer-area {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 10px;
+}
+
+.footer-copyright {
+    font-size: 11px;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.thanks-message {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--glow-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.vortex-signature {
+    font-size: 10px;
+    color: var(--text-secondary);
+    opacity: 0.4;
+    margin-top: 4px;
+}
+
+.vortex-signature span {
+    color: var(--glow-purple);
+    font-weight: bold;
+}
+
+/* Эффекти пахшшавии умумӣ ба тугмаҳо */
+.social-card,
+.btn-top-service,
+.cta-gold-btn {
+    cursor: pointer;
+}
